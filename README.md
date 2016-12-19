@@ -19,15 +19,18 @@ easy_install jenkinsapi
   * In Jenkins > 1.518 you will need to disable "Prevent Cross Site Request Forgery exploits".
   * Remember to set the Jenkins Location in general settings - Jenkins' REST web-interface will not work if this is set incorrectly.
   
-  
-# usage
-#Database 
+# Database 
 db_name defines the database path
 db_name = 'jenkins.db'
 
 #Database connection is initiated 
 conn = sqlite3.connect(db_name)
 c = conn.cursor()
+
+# usage
+If running on a PC, pull the repository into a folder on your platform. 
+Run the command 'python script.py' in a command line shell from the projects folder to execute the script named script.py. 
+On execution, a dictionary (dict{}) of jobs and their status from the defined jenkins instance is created, and the status for each job is stored in the defined sqlite database along with it was checked.
 
 
 #A table named 'jenkins' with fields (job_name, status, date_checked) is created
